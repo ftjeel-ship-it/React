@@ -35,3 +35,12 @@
 4) passing javascript expression 
 5) JSX styling 
 6) JSX comments
+
+
+### Props-->properties
+## Passing props(parent)
+
+<component propertyName = "value/">
+
+## Reading props(child)
+

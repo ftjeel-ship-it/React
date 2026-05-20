@@ -15,4 +15,6 @@ function Comp2(){
         </div>
     )
 }
-export default Comp2
+export default Comp2 
+// id , name ,stad,map and milter display only those student whose standard is 5 increase there std by one 
+// 3 display std 
