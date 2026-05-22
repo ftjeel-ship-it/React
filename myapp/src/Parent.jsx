@@ -28,19 +28,21 @@ import Child from './Child.jsx'
 //? 3) pass details to child 
 //? 4) in child dipslay 
 
-function Parent(){
-    let a = {
-        sname:'ved',
-        uni:'lj'
-    }
-    return(
+// function Parent(){
+//     let a = {
+//         sname:'ved',
+//         uni:'lj'
+//     }
+//     return(
 
-        <div>
-            <Child obj = {a}/>
+//         <div>
+//             <Child obj = {a}/>
 
-        </div>
-    )
+//         </div>
+//     )
 
-}
+// }
+
+
 
 export default Parent

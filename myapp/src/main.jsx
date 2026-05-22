@@ -8,7 +8,11 @@ import './index.css'
 // import Con3 from './Con3.jsx'
 // import Mf1  from './Mf1.jsx'
 // import Mf2 from './Mf2'
-import Parent from './Parent.jsx'
+// import Parent from './Parent.jsx'
+
+// import List from './List.jsx'
+
+import My from './Routing/My.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,6 +21,6 @@ createRoot(document.getElementById('root')).render(
       {/* <Comp2/> */}
       {/* <Con3/> */}
       {/* <Mf2/> */}
-      <Parent/>
+      <My/>
   </StrictMode>,
 )
