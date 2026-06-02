@@ -1,6 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import './index.css' 
+
+import Event from './Routing/Event.jsx'
 // import App from './App.jsx'
 // import Myapp from './Myapp.jsx'
 // import Com1 from './Comp1.jsx'
@@ -12,7 +14,9 @@ import './index.css'
 
 // import List from './List.jsx'
 
-import My from './Routing/My.jsx'
+// import My from './Routing/My.jsx'
+// import UseState from './Hook/UseState.jsx'
+import UseReducer from './Hook/UseReducer.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,6 +25,8 @@ createRoot(document.getElementById('root')).render(
       {/* <Comp2/> */}
       {/* <Con3/> */}
       {/* <Mf2/> */}
-      <My/>
+      {/* <My/> */}
+      {/* <UseState/> */}
+      <UseReducer/>
   </StrictMode>,
 )

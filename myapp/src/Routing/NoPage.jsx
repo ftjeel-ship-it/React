@@ -2,8 +2,8 @@ import React from "react";
 
 function NoPage(){
     return(
-        <div>
-            <h1>Welcome To No Page</h1>
+        <div style={{color:'red'}}>
+            <h1>No Page</h1>
         </div>
     )
 }
