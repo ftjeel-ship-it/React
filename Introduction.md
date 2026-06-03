@@ -1,89 +1,205 @@
-# ⚛️ React
+# ⚛️ React JS Notes
 
-# chap-7
+# 📘 Chapter - 7
 
-## 📌 info:
+---
+
+# 📌 Introduction to React
+
+## 🔹 What is React?
 
 * Open Source
-* JS Library
+* JavaScript Library
 * Developed by Facebook
-* MVC → View Layer
+* Used to build UI
+* Works on MVC → View Layer
+
+### 🧠 Memory Line
+
+> React = Reusable UI Components
 
 ---
 
-# ✅ Advantage:
+# 📌 MVC Architecture
 
-* Component Based Architecture
-* Reusability
-* Rendering
-* Declarative Programming
-* Efficient DOM Update
+| Part | Meaning    |
+| ---- | ---------- |
+| M    | Model      |
+| V    | View       |
+| C    | Controller |
+
+React mainly handles **View Layer**.
 
 ---
 
-# 📁 Files Structure
+# ✅ Advantages of React
 
-```bash id="9wnf9k"
-myapp
+## 🔹 Component Based Architecture
+
+Application divided into reusable components.
+
+```jsx
+<Card />
+<Card />
+<Card />
+```
+
+---
+
+## 🔹 Fast Rendering
+
+Only changed part updates.
+
+---
+
+## 🔹 Declarative UI
+
+UI updates automatically with state.
+
+---
+
+## 🔹 Virtual DOM
+
+Faster than normal DOM updates.
+
+### 🧠 Memory Line
+
+> Virtual DOM = Fast Performance
+
+---
+
+# 📁 React Project Structure
+
+```bash
+T3_REACT
 │
-├── node_modules
-│   └── for all node functions
-│
-├── src
-│   ├── assets
-│   │   └── images and videos
+├── myapp
+│   ├── node_modules
+│   ├── public
+│   ├── src
+│   │   ├── assets
+│   │   ├── Hook
+│   │   ├── Routing
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
 │   │
-│   ├── App.css
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
-│
-└── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   └── index.html
 ```
 
 ---
 
-# 🔄 Flow
+# 🔄 React Flow
 
-```text id="g3r8dk"
-index.css → main.jsx → App.jsx
+```text
+index.html
+   ↓
+main.jsx
+   ↓
+App.jsx
+   ↓
+Components
 ```
-
-* `index.html` is entry point
-* `main.jsx` connects React with HTML
-* `App.jsx` is main component
 
 ---
 
-# ⚡ Rules for JSX
+# 📌 Important Files
 
-## 📌 Fragment Tag
+## 🔹 node_modules
 
-```jsx id="67m4zl"
+Contains installed packages.
+
+---
+
+## 🔹 assets
+
+Stores:
+
+* Images
+* SVG
+* Videos
+* Logos
+
+```jsx
+import hero from './assets/hero.png'
+```
+
+---
+
+## 🔹 App.jsx
+
+Main component.
+
+```jsx
+const App = ()=>{
+   return(
+      <h1>Hello React</h1>
+   )
+}
+```
+
+---
+
+## 🔹 main.jsx
+
+Connects React with DOM.
+
+```jsx
+import ReactDOM from 'react-dom/client'
+import App from './App'
+
+ReactDOM.createRoot(
+document.getElementById('root')
+).render(<App />)
+```
+
+---
+
+## 🔹 index.html
+
+Entry point.
+
+```html
+<div id="root"></div>
+```
+
+---
+
+# ⚡ JSX Rules
+
+---
+
+# 📌 Fragment Tag
+
+```jsx
 <>
    <h1>Hello</h1>
-   <p>Welcome</p>
 </>
 ```
 
+### 🧠 Memory Line
+
+> Fragment avoids extra div
+
 ---
 
-## 1) Return Single Root Element
+# 1️⃣ Single Root Element
 
 ✅ Correct
 
-```jsx id="7ad0pu"
+```jsx
 return(
-   <div>
-      <h1>Hello</h1>
-      <p>React</p>
-   </div>
+  <div>
+     <h1>Hello</h1>
+  </div>
 )
 ```
 
 ❌ Wrong
 
-```jsx id="gtw8xo"
+```jsx
 return(
    <h1>Hello</h1>
    <p>React</p>
@@ -92,138 +208,104 @@ return(
 
 ---
 
-## 2) Close All Tags
+# 2️⃣ Close All Tags
 
-✅ Correct
-
-```jsx id="y1t3wo"
-<img src="img.jpg" />
-<input type="text" />
+```jsx
+<img />
+<input />
 ```
 
 ---
 
-## 3) Use camelCase Attributes
+# 3️⃣ camelCase Attributes
 
 ✅ Correct
 
-```jsx id="zh6gx8"
-<h1 className="jeel">H1</h1>
+```jsx
+<h1 className="demo">
 ```
 
 ❌ Wrong
 
-```jsx id="5r7g8n"
-<h1 class="jeel">H1</h1>
+```jsx
+<h1 class="demo">
 ```
 
 ---
 
-## 4) Passing JavaScript Expression
+# 4️⃣ JavaScript in JSX
 
-```jsx id="a9r75v"
-const name = "Jeel";
+```jsx
+const name = "Jeel"
 
-<h1>Hello {name}</h1>
-```
-
-### Example
-
-```jsx id="1x0jlwm"
-const age = 18;
-
-<p>My age is {age}</p>
+<h1>{name}</h1>
 ```
 
 ---
 
-## 5) JSX Styling
+# 5️⃣ JSX Styling
 
-```jsx id="c2ux6v"
-<h1 style={{color:"red",fontSize:"40px"}}>
-   React JS
+```jsx
+<h1 style={{color:"red"}}>
+   React
 </h1>
 ```
 
-### Example
+---
 
-```jsx id="79xf07"
-<p style={{backgroundColor:"black",color:"white"}}>
-   Welcome
-</p>
+# 6️⃣ JSX Comments
+
+```jsx
+{/* JSX Comment */}
 ```
 
 ---
 
-## 6) JSX Comments
+# 📦 Props
 
-```jsx id="2m8rdx"
-{/* This is JSX comment */}
+Props transfer data:
+
+```text
+Parent → Child
 ```
 
 ---
 
-# 📦 Props → Properties
+# 🔼 Passing Props
 
-Props are used to pass data from Parent Component to Child Component.
-
----
-
-# 🔼 Passing Props (Parent)
-
-```jsx id="2g1p7h"
+```jsx
 <Student name="Jeel" age="18" />
 ```
 
-### Example
-
-```jsx id="1j6n6y"
-<Employee ename="Rahul" salary="50000" />
-```
-
 ---
 
-# 🔽 Reading Props (Child)
+# 🔽 Receiving Props
 
-```jsx id="e9yxkq"
+```jsx
 const Student = (props)=>{
    return(
-      <div>
-         <h1>{props.name}</h1>
-         <p>{props.age}</p>
-      </div>
+      <h1>{props.name}</h1>
    )
 }
 ```
 
----
+### 🧠 Memory Line
 
-# 🔥 Another Props Example
-
-```jsx id="rrd1p8"
-const Employee = (props)=>{
-   return(
-      <>
-         <h1>Employee Name : {props.ename}</h1>
-         <h2>Salary : {props.salary}</h2>
-      </>
-   )
-}
-```
+> Props are Read Only
 
 ---
 
-# unit-8
+# 📘 Unit - 8
 
-# Hooks in React JS
+# 🎣 Hooks in React
 
 ---
 
 # 📌 Types of Components
 
-## 1) Class Component (2013)
+## 1️⃣ Class Component
 
-```jsx id="7sx2qq"
+```jsx
 class App extends React.Component{
    render(){
       return <h1>Hello</h1>
@@ -233,13 +315,11 @@ class App extends React.Component{
 
 ---
 
-## 2) Function Component (2019)(16.8)
+## 2️⃣ Function Component
 
-```jsx id="r5ux8s"
+```jsx
 const App = ()=>{
-   return(
-      <h1>Hello</h1>
-   )
+   return <h1>Hello</h1>
 }
 ```
 
@@ -247,39 +327,27 @@ const App = ()=>{
 
 # 🎣 Hooks
 
-* Hooks are introduced in React 16.8
-* Hooks are used in Function Components
-* Hooks make code simpler
+* Introduced in React 16.8
+* Used in Function Components
+* Simplifies code
 
 ---
 
 # 📋 Rules of Hooks
 
-## 1) Hook can only be called inside React Function Component
+## ✅ Only inside Function Component
 
-✅ Correct
-
-```jsx id="blmjlwm"
-const App = ()=>{
-   const [count,setCount] = useState(0)
-}
+```jsx
+useState()
 ```
 
 ---
 
-## 2) Can only be called at Top Level
-
-✅ Correct
-
-```jsx id="xpp8ka"
-const App = ()=>{
-   const [count,setCount] = useState(0)
-}
-```
+## ✅ Only at Top Level
 
 ❌ Wrong
 
-```jsx id="rj0uz0"
+```jsx
 if(true){
    useState()
 }
@@ -287,11 +355,9 @@ if(true){
 
 ---
 
-## 3) Hooks Can't be Conditional
+## ❌ Never Conditional
 
-❌ Wrong
-
-```jsx id="b2ig2j"
+```jsx
 if(count>0){
    useEffect()
 }
@@ -299,98 +365,352 @@ if(count>0){
 
 ---
 
-# 🔥 useState Example
+# 🔥 useState Hook
 
-```jsx id="9t0kwz"
-import React, {useState} from 'react'
+## 📌 Syntax
+
+```jsx
+const [state,setState] = useState(value)
+```
+
+---
+
+# 📌 Example
+
+```jsx
+import {useState} from 'react'
 
 const App = ()=>{
 
    const [count,setCount] = useState(0)
 
-   const increase = ()=>{
-      setCount(count+1)
-   }
-
    return(
       <>
          <h1>{count}</h1>
 
-         <button onClick={increase}>
+         <button
+         onClick={()=>setCount(count+1)}>
             Increase
          </button>
       </>
    )
 }
+```
 
-export default App
+### 🧠 Memory Line
+
+> useState stores changing data
+
+---
+
+# 🔥 useEffect Hook
+
+## 📌 Syntax
+
+```jsx
+useEffect(<function>,<dependency>)
 ```
 
 ---
 
-# 🔥 useReducer
+# 📌 Example
 
-## Syntax
-
-```jsx id="vhrjgw"
-const [state,dispatch] = useReducer(reducerFunction,initialValue)
-```
-
----
-
-# 📌 useReducer Example
-
-```jsx id="9j4ng2"
-import React,{useReducer} from 'react'
-
-const reducer = (state,action)=>{
-
-   switch(action){
-
-      case "increment":
-         return state+1
-
-      case "decrement":
-         return state-1
-
-      default:
-         return state
-   }
-}
+```jsx
+import {useEffect,useState} from 'react'
 
 const App = ()=>{
 
-   const [count,dispatch] = useReducer(reducer,0)
+   const [count,setCount] = useState(0)
+
+   useEffect(()=>{
+      console.log('hello')
+   },[count])
 
    return(
       <>
          <h1>{count}</h1>
 
-         <button onClick={()=>dispatch("increment")}>
-            Increment
-         </button>
-
-         <button onClick={()=>dispatch("decrement")}>
-            Decrement
+         <button
+         onClick={()=>setCount(count+1)}>
+            Click
          </button>
       </>
    )
 }
-
-export default App
 ```
 
 ---
 
-# 🎯 Summary
+# 📌 Explanation
 
-* React is JavaScript Library
-* JSX allows HTML inside JavaScript
-* Components make code reusable
-* Props transfer data
-* Hooks are used in Function Components
-* useReducer manages complex state
+| Part        | Meaning          |
+| ----------- | ---------------- |
+| useEffect() | Side Effect Hook |
+| function    | Code to execute  |
+| [count]     | Dependency Array |
 
 ---
 
-# 🚀 End of Notes
+# 📌 When useEffect Runs?
+
+## ✅ Empty Dependency
+
+```jsx
+useEffect(()=>{
+   console.log("Run Once")
+},[])
+```
+
+Runs only once.
+
+---
+
+## ✅ With Dependency
+
+```jsx
+useEffect(()=>{
+   console.log("Count Changed")
+},[count])
+```
+
+Runs when count changes.
+
+---
+
+## ✅ Without Dependency
+
+```jsx
+useEffect(()=>{
+   console.log("Every Render")
+})
+```
+
+Runs on every render.
+
+---
+
+### 🧠 Memory Line
+
+> useEffect handles side effects
+
+Examples:
+
+* API Call
+* Timer
+* Data Fetching
+* DOM Update
+
+---
+
+# 🔥 useReducer Hook
+
+## 📌 Syntax
+
+```jsx
+const [state,dispatch]
+= useReducer(reducer,value)
+```
+
+---
+
+# 📌 Example
+
+```jsx
+import {useReducer} from 'react'
+
+function reducer(state,action){
+   return state + action
+}
+
+function App(){
+
+   const [state,dispatch]
+   = useReducer(reducer,20)
+
+   return(
+      <>
+         <h1>{state}</h1>
+
+         <button
+         onClick={()=>dispatch(5)}>
+            Click
+         </button>
+      </>
+   )
+}
+```
+
+---
+
+# 🔥 useContext Hook
+
+## 📌 Purpose
+
+Share data without props.
+
+---
+
+# 📌 Create Context
+
+```jsx
+const Fname = createContext()
+```
+
+---
+
+# 📌 Provide Context
+
+```jsx
+<Fname.Provider value="Jeel">
+   <Child />
+</Fname.Provider>
+```
+
+---
+
+# 📌 Consume Context
+
+```jsx
+const value = useContext(Fname)
+```
+
+---
+
+# 📌 Full Example
+
+```jsx
+import {
+createContext,
+useContext
+} from 'react'
+
+const Fname = createContext()
+
+const Child = ()=>{
+
+   const value = useContext(Fname)
+
+   return <h1>{value}</h1>
+}
+
+const App = ()=>{
+
+   return(
+      <Fname.Provider value="Jeel">
+         <Child />
+      </Fname.Provider>
+   )
+}
+```
+
+---
+
+### 🧠 Memory Line
+
+> useContext avoids prop drilling
+
+---
+
+# 🚀 Extra Important Points
+
+---
+
+## ✅ One Way Data Flow
+
+```text
+Parent → Child
+```
+
+---
+
+## ✅ Babel
+
+Converts JSX into JavaScript.
+
+```jsx
+<h1>Hello</h1>
+```
+
+Converted into:
+
+```js
+React.createElement()
+```
+
+---
+
+## ✅ Advantages of Hooks
+
+* Cleaner Code
+* Easy State
+* Reusable Logic
+* Less Boilerplate
+
+---
+
+## ✅ Vite
+
+* Faster than CRA
+* Instant Refresh
+* Better Performance
+
+### 🧠 Memory Line
+
+> Vite = Lightning Fast React Setup ⚡
+
+---
+
+## ✅ Controlled Component
+
+Input controlled by state.
+
+```jsx
+<input
+value={name}
+onChange={(e)=>setName(e.target.value)}
+/>
+```
+
+---
+
+## ✅ Key in React
+
+Used in list rendering.
+
+```jsx
+{arr.map((v,i)=>(
+   <h1 key={i}>{v}</h1>
+))}
+```
+
+---
+
+# 🎨 Useful Icons
+
+| Icon | Meaning   |
+| ---- | --------- |
+| ⚛️   | React     |
+| 📁   | Folder    |
+| 📌   | Important |
+| 🔥   | Hook      |
+| 🎣   | Hooks     |
+| 🚀   | Advanced  |
+| ✅    | Correct   |
+| ❌    | Wrong     |
+| 🎨   | Styling   |
+
+---
+
+# 🏁 Conclusion
+
+* React is JS Library
+* JSX allows HTML in JS
+* Components improve reusability
+* Props transfer data
+* Hooks manage state
+* Virtual DOM improves speed
+* Vite gives faster development
+
+---
+
+# ✨ End of Notes

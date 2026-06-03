@@ -16,7 +16,9 @@ import Event from './Routing/Event.jsx'
 
 // import My from './Routing/My.jsx'
 // import UseState from './Hook/UseState.jsx'
-import UseReducer from './Hook/UseReducer.jsx'
+// import UseReducer from './Hook/UseReducer.jsx'
+// import UseContext from './Hook/UseContext.jsx'
+import PC from './Hook/UseContext/PC.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -27,6 +29,8 @@ createRoot(document.getElementById('root')).render(
       {/* <Mf2/> */}
       {/* <My/> */}
       {/* <UseState/> */}
-      <UseReducer/>
+      {/* <UseReducer/> */}
+      {/* <Use/> */}
+      <PC/>
   </StrictMode>,
 )
