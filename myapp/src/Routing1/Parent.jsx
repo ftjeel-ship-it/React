@@ -1,4 +1,4 @@
-import Child from './Child.jsx'
+// import Child from './Child.jsx'
 
 // function Parent(){
 //     return(
@@ -45,4 +45,43 @@ import Child from './Child.jsx'
 
 
 
+// export default Parent
+
+import React from "react";
+import Child from './Child'
+
+// const Parent = ()=>{
+//     const student = [
+//         {
+//             name:'jeel',
+//             roll:18,
+//             marks:[18,20,45,17]
+//         },
+//         {
+//             name:'ved',
+//             roll:45,
+//             marks:[18,20,45,17]
+//         }
+//     ]
+
+//     return (
+//         <>
+//         <Child info = {student}/>
+//         </>
+//     )
+// }
+
+
+// 
+
+import Product from './Product'
+const Parent = ()=>{
+    const a = 5
+
+    return (
+        <>
+        <Product s = {a}/>
+        </>
+    )
+}
 export default Parent

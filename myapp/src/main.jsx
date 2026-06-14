@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css' 
 
-import Event from './Routing/Event.jsx'
+// import Event from './Routing/Event.jsx'
 // import App from './App.jsx'
 // import Myapp from './Myapp.jsx'
 // import Com1 from './Comp1.jsx'
@@ -18,19 +18,17 @@ import Event from './Routing/Event.jsx'
 // import UseState from './Hook/UseState.jsx'
 // import UseReducer from './Hook/UseReducer.jsx'
 // import UseContext from './Hook/UseContext.jsx'
-import PC from './Hook/UseContext/PC.jsx'
+// import PC from './Hook/UseContext/PC.jsx'
+// import A1 from './Axios/A1.jsx'
+// import Props1 from './components/Props1.jsx'
 
+// import UE1 from './Hook/UseEffect/UE1.jsx'
+// import App from './App'
+// import NoPage  from './NoPage'
+// import Home from './Home'
+import Parent from './Parent'
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    {/* <Myapp/> */}
-    {/* <Com1/> */}
-      {/* <Comp2/> */}
-      {/* <Con3/> */}
-      {/* <Mf2/> */}
-      {/* <My/> */}
-      {/* <UseState/> */}
-      {/* <UseReducer/> */}
-      {/* <Use/> */}
-      <PC/>
-  </StrictMode>,
+  
+      <Parent/>
+ 
 )
